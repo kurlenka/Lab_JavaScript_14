@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+            $(document).ready(function(){
+                class Hero {
+                    constructor(name, level) {
+                        this.name = name;
+                        this.level = level;
+                    }
+                    // Добавляем метод в конструктор
+                    greet() {
+                        return `${this.name} says hello.`;
+                    }
+                }
+                // Создаем новый класс из родительского
+                class Mage extends Hero {
+                    constructor(name, level, spell) {
+                        // Создаем конструктор с использованием super
+                        super(name, level);
+                    // Добавляем новое свойство
+                    this.spell = spell;
+                    }
+                }
+                Hero.prototype.greet = function () {
+                    return `${this.name} says hello.`;
+                }
+                Mage.prototype.weapon = function(){
+                    return `${this.name} use ${this.spell} .`;
+                }
+                hero1 = new Mage('Iron man', 1, 'laser gun')
+
+
+                alert(hero1.weapon());
+                alert(hero1.greet());
+
+            })
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

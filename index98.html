@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+            $('document').ready(function(){
+                var table = new Array(10);
+               
+                var col = 0;
+                var raw = 0;
+                var w = '';
+                var s = '';
+                
+                for(var i = 0; i < 10; i++){
+                    table[i] = new Array(10);
+                }
+                for (raw = 0; raw < 10; raw++){
+                    for (col = 0; col < 10; col++){
+                        table[raw][col] = (raw + 1) * (col + 1);
+                    }
+                }
+                for (col = 0; col < 10; col++){
+                    for (raw = 0; raw < 5; raw++){
+                        if (raw < 9){
+                            s = "0" + (raw + 1);
+                        }
+                        else{
+                            s = (raw + 1);
+                        }
+                        w += s + " X ";
+                        if (col < 9){
+                            s = "0" + (col + 1);
+                        }
+                        else{
+                            s = (col + 1);
+                        }
+                        w += s + "=";
+                        if (table[raw][col] < 100){
+                            if(table[raw][col] < 10){
+                                s = "00" + table[raw][col];
+                            }
+                            else{
+                                s = "0" + table[raw][col];
+                            }
+                        }
+                        else{
+                            s = table[raw][col];
+                        }
+                        w += s + "&nbsp;&nbsp;&nbsp;";
+                    }
+                    if(raw >= 4){
+                        w +='<br><br>';
+                    }
+                }
+                w +='<br><br>';
+                for (col = 0; col < 10; col++){
+                    for (raw = 5; raw < 10; raw++){
+                        if (raw < 9){
+                            s = "0" + (raw + 1);
+                        }
+                        else{
+                            s = (raw + 1);
+                        }
+                        w += s + " X ";
+                        if (col < 9){
+                            s = "0" + (col + 1);
+                        }
+                        else{
+                            s = (col + 1);
+                        }
+                        w += s + "=";
+                        if (table[raw][col] < 100){
+                            if(table[raw][col] < 10){
+                                s = "00" + table[raw][col];
+                            }
+                            else{
+                                s = "0" + table[raw][col];
+                            }
+                        }
+                        else{
+                            s = table[raw][col];
+                        }
+                        w += s + "&nbsp;&nbsp;&nbsp;";
+                    }
+                    if(raw >= 4){
+                        w +='<br><br>';
+                    }
+                }
+                $('body').html(w);
+            })
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function () {
+            class Manager {
+                constructor(name, surname, age, rate, days) {
+                    this.name = name;
+                    this.surname = surname;
+                    this.age = age;
+                    this.rate = rate;
+                    this.days = days;
+                }
+                getName() {
+                    return this.name;
+                }
+                setName(value) {
+                    this.name = value;
+                }
+                getSurname() {
+                    return this.surname;
+                }
+                setSurname(value) {
+                    this.surname = value;
+                }
+                getAge() {
+                    return this.age;
+                }
+                setAge(value) {
+                    this.age = value;
+                }
+                getRate() {
+                    return this.rate;
+                }
+                setRate(value) {
+                    this.rate = value;
+                }
+                getDays() {
+                    return this.days;
+                }
+                setDays(value) {
+                    this.days = value;
+                }
+                getSalary() {
+                    return this.days * this.rate;
+                }
+            }
+
+            var manager_01 = new Manager("Дональд", "Трамп", 33, 30, 30);
+            var manager_02 = new Manager("Павел", "Тылец", 29, 35, 24);
+            var manager_03 = new Manager("Александр", "Хатьков", 27, 30, 28);
+            var manager_04 = new Manager("Дмитрий", "Делендик", 40, 25, 19);
+            var manager_05 = new Manager("Мария", "Русинович", 33, 30, 26);
+            var manager_06 = new Manager("Ольга", "Орловская", 30, 40, 31);
+
+            $('#test').click(function () {
+                alert('Имя: ' + manager_01.name);
+                alert('Фамилия: ' + manager_01.surname);
+                alert('Возраст: ' + manager_01.age);
+                alert('Дневная зарплата: ' + manager_01.rate);
+                alert('Кол-во дней: ' + manager_01.days);
+                alert('Зарплата: ' + manager_01.getSalary());
+
+                alert('Имя: ' + manager_02.name);
+                alert('Фамилия: ' + manager_02.surname);
+                alert('Возраст: ' + manager_02.age);
+                alert('Ставка (в день): ' + manager_02.rate);
+                alert('Кол-во дней: ' + manager_02.days);
+                alert('Зарплата: ' + manager_02.getSalary());
+
+                alert('Имя: ' + manager_03.name);
+                alert('Фамилия: ' + manager_03.surname);
+                alert('Возраст: ' + manager_03.age);
+                alert('Дневная зарплата: ' + manager_03.rate);
+                alert('Кол-во дней: ' + manager_03.days);
+                alert('Зарплата: ' + manager_03.getSalary());
+
+                alert('Имя: ' + manager_04.name);
+                alert('Фамилия: ' + manager_04.surname);
+                alert('Возраст: ' + manager_04.age);
+                alert('Дневная зарплата: ' + manager_04.rate);
+                alert('Кол-во дней: ' + manager_04.days);
+                alert('Зарплата: ' + manager_04.getSalary());
+
+                alert('Имя: ' + manager_05.name);
+                alert('Фамилия: ' + manager_05.surname);
+                alert('Возраст: ' + manager_05.age);
+                alert('Дневная зарплата: ' + manager_05.rate);
+                alert('Кол-во дней: ' + manager_05.days);
+                alert('Зарплата: ' + manager_05.getSalary());
+
+                alert('Имя: ' + manager_06.name);
+                alert('Фамилия: ' + manager_06.surname);
+                alert('Возраст: ' + manager_06.age);
+                alert('Дневная зарплата: ' + manager_06.rate);
+                alert('Кол-во дней: ' + manager_06.days);
+                alert('Зарплата: ' + manager_06.getSalary());
+
+                alert('Общая зарплата отдела: ' + (manager_01.getSalary() + manager_02.getSalary() + manager_03.getSalary() + manager_04.getSalary() + manager_05.getSalary() + manager_06.getSalary()));
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button type="button" id="test" name="button">find</button>
+</body>
+
+</html>
