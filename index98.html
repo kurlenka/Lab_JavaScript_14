@@ -23,25 +23,25 @@
                 for (col = 0; col < 10; col++){
                     for (raw = 0; raw < 5; raw++){
                         if (raw < 9){
-                            s = "0" + (raw + 1);
+                            s = "&ensp;&ensp;" + (raw + 1);
                         }
                         else{
                             s = (raw + 1);
                         }
-                        w += s + " X ";
+                        w += s + " x ";
                         if (col < 9){
-                            s = "0" + (col + 1);
+                            s = "&ensp;&ensp;" + (col + 1);
                         }
                         else{
-                            s = (col + 1);
+                            s = "&ensp;" +  (col + 1);
                         }
                         w += s + "=";
                         if (table[raw][col] < 100){
                             if(table[raw][col] < 10){
-                                s = "00" + table[raw][col];
+                                s = "&ensp;&ensp;" + table[raw][col];
                             }
                             else{
-                                s = "0" + table[raw][col];
+                                s = "&ensp;" + table[raw][col];
                             }
                         }
                         else{
@@ -50,32 +50,32 @@
                         w += s + "&nbsp;&nbsp;&nbsp;";
                     }
                     if(raw >= 4){
-                        w +='<br><br>';
+                        w +='<br>';
                     }
                 }
                 w +='<br><br>';
                 for (col = 0; col < 10; col++){
                     for (raw = 5; raw < 10; raw++){
                         if (raw < 9){
-                            s = "0" + (raw + 1);
+                            s = "&ensp;&ensp;" + (raw + 1);
                         }
                         else{
-                            s = (raw + 1);
+                            s ="&ensp;" +  (raw + 1);
                         }
-                        w += s + " X ";
+                        w += s + " x ";
                         if (col < 9){
-                            s = "0" + (col + 1);
+                            s = "&ensp;&ensp;" + (col + 1);
                         }
                         else{
-                            s = (col + 1);
+                            s = s = "&ensp;" +  (col + 1);
                         }
                         w += s + "=";
                         if (table[raw][col] < 100){
                             if(table[raw][col] < 10){
-                                s = "00" + table[raw][col];
+                                s = "&ensp;&ensp;" + table[raw][col];
                             }
                             else{
-                                s = "0" + table[raw][col];
+                                s = "&ensp;" + table[raw][col];
                             }
                         }
                         else{
@@ -84,7 +84,7 @@
                         w += s + "&nbsp;&nbsp;&nbsp;";
                     }
                     if(raw >= 4){
-                        w +='<br><br>';
+                        w +='<br>';
                     }
                 }
                 $('body').html(w);
